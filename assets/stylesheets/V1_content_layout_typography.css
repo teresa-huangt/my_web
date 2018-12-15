@@ -71,6 +71,7 @@ table {
 }
 .col-1-3{
 	width: 33.33%;
+  margin-bottom: 20px;
 	
 }
 .col-2-3{
@@ -136,17 +137,19 @@ h2 {
   font-weight: 900;
 }
 h3 {
-  font-size: 10px;
+  font-size: 18px;
   text-align: center;
   margin-top: 22px;
 }
 h4 {
   font-size: 15px;
   line-height: 44px;
+  color: #6c7a89;
 }
 h4 + p {
-  font-size: 8px;
-  line-height: 150%;
+  font-size: 5px;
+/*  line-height: 150%;*/
+  color: #bdc3c7；
 }
 nav {
   font-size: 15px;
@@ -201,6 +204,9 @@ nav h2 {
   background-color: transparent;
   margin-bottom: 0px;
 }
+.back {
+  border-bottom: 3px solid #bdc3c7;
+}
 
 
 /*
@@ -233,8 +239,17 @@ nav a:hover {
   background-color: #f89406;
 }
 
-.back a {
+#Project a {
   color: #6c7a89;
+  font-size: 12px;
+}
+#Project a:hover {
+  color: #f89406;
+  font-size: 12px;
+}
+
+.back a {
+  color: #bdc3c7;
 }
 .back a:hover {
   color: #f89406;
