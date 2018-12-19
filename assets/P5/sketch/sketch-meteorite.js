@@ -39,7 +39,7 @@ function preload(){
 
 // Setup
 function setup() {
-	canvas = createCanvas(800,600);
+	canvas = createCanvas(800, 600);
 	myMap = mappa.tileMap(options);
 	myMap.overlay(canvas);
 
@@ -54,6 +54,7 @@ function setup() {
 
   cal_yearRange();
   cal_massMax();
+  show_Introduction();
   myMap.onChange(drawPoints);
 
   // Create GUI
@@ -96,13 +97,26 @@ function cal_massMax() {
   }
 }
 
+
+// 
+function show_Introduction(){
+fill(142, 53, 74);
+text("Move mouse to change time range", 0, height-60)
+}
+
+
+
 function draw() {
   if (is_in_scroll()){
     cal_mouseyear()
     drawPoints()
-    fill(255, 255, 255)
-    text(str(mouseyear-mousegap)+' - '+str(mouseyear+mousegap), mouseX, mouseY-10)
     draw_scroll()
+    fill(255, 255, 255)
+    if (mouseY < (height-10) ) {
+      text(str(mouseyear-mousegap)+' - '+str(mouseyear+mousegap), mouseX+5, mouseY+10)
+    } else {
+      text(str(mouseyear-mousegap)+' - '+str(mouseyear+mousegap), mouseX+5, mouseY-10)
+    }
   }
 }
 
@@ -161,10 +175,10 @@ function is_goodyear(year, a, b){
 
 function draw_scroll(){
   noStroke()
-  fill(142, 53, 74, 10)
+  fill(142, 53, 74)
   rect(0, height-50, width, 50)
-  fill(142, 53, 74, 150)
-  rect(mouseX-mousegap/2, 550, mousegap,50)
+  fill(241, 169, 160,90)
+  rect(mouseX-mousegap/2, height-50, mousegap,50)
 }
 
 
