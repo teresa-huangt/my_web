@@ -18,7 +18,7 @@ let maxhist = 0
 
 let size;
 let maxmass = 0;
-let num = 500;
+let num = 200;
 let maxyear = 0;
 let minyear = 0;
 
@@ -41,6 +41,7 @@ function preload(){
 
 // Setup
 function setup() {
+  pixelDensity(1)
 	canvas = createCanvas(800, 600);
 	myMap = mappa.tileMap(options);
 	myMap.overlay(canvas);
@@ -127,13 +128,14 @@ function cal_massMax() {
 function show_Introduction(){
   fill(200)
   textSize(20)
-  text("Move your mouse.", 10, height-60)
+  text("Move your mouse.", width/2-50, 30)
   textSize(14)
 }
 
 
 function draw() {
   if (is_in_scroll()){
+    clear()
     cal_mouseyear()
     drawPoints()
     draw_scroll()
@@ -157,7 +159,6 @@ function cal_mouseyear(){
 
 // Draw meteorites using ellipse
 function drawPoints(){
-  clear();
   lx = -1
   ly = -1
   a = 200
@@ -181,7 +182,7 @@ function drawPoints(){
       if (a > 10) {
         a = a - 10
       }
-      line(pos1.x, pos1.y, pos2.x, pos2.y)
+      //line(pos1.x, pos1.y, pos2.x, pos2.y)
       lx = x
       ly = y
     }
